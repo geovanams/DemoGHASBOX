@@ -28,11 +28,9 @@ namespace UnsecureApp.Controllers
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand sqlCommand = new SqlCommand()
-                {
-                    CommandText = "SELECT ProductId FROM Products WHERE ProductName = '" + productName + "'",
-                    CommandType = CommandType.Text,
-                };
+                SqlCommand sqlCommand = new SqlCommand("SELECT ProductId FROM Products WHERE ProductName = @productName", connection);
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.Parameters.Add(new SqlParameter("@productName", productName));
 
                 SqlDataReader reader = sqlCommand.ExecuteReader();
                 return reader.GetInt32(0); 
