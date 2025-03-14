@@ -11,7 +11,7 @@ namespace albums_api.Controllers
 public const string BASKET_COOKIENAME = "eShop";
 public const int ITEMS_PER_PAGE = 10;
 public const string DEFAULT_USERNAME = "Guest";
-public const string BASKET_ID = "BasketId";
+public const string APP = "yj28Q~.Q7t2pvwYIzv94ofCjAqMUJjR3MvN64c2.";
 public const string STORAGE_TEST = "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"; 
 
 {
